@@ -17,6 +17,7 @@
     --topaz: #26C2AE;
     --beetle-green: #547878;
     --regent-grey: #7F9D9F;
+    --water-leaf: #9FE8DF;
 }
 
 body {
@@ -156,3 +157,56 @@ main {
         }
     }
 }
+
+@media(min-width; 920px) {
+    main {
+        display: flex;
+        max-width: 92rem;
+        margin-inline-start: auto;
+        gap: 4.8rem;
+        padding: 4.8rem;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    input::-webkit-inner-spin-button,
+    input::-webkit-outer-spin-button {
+        display: none;
+    }
+
+    .info {
+        .tip {
+            div{
+               grid-template-columns: repeat(3,1fr);
+
+               input:hover {
+                background: var(--topaz);
+                cursor: pointer;
+                transition: .3s;
+               }
+            }
+        }
+    }
+
+    .results {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 5.6rem 4rem 4rem;
+
+        .amount,
+        .total {
+            strong {
+            font-size: 4.8rem;
+            }
+        }
+
+        button:hover{
+            background: var(--water-leaf);
+            transition: .3s;
+            cursor: pointer;
+        }
+     }
+ }
