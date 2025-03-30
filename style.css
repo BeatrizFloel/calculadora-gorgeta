@@ -14,6 +14,8 @@
     --strong-text: #5E7A7D;
     --bg-div: #F3F9FA;
     --input-text: #00474B;
+    --topaz: #26C2AE;
+    --beetle-green: #547878;
 }
 
 body {
@@ -34,31 +36,81 @@ main {
     border-radius: 2.5rem 2.5rem 0 0;
 }
 
-.info strong {
-    color: var(--strong-text);
-}
+.info {
+    margin-inline: .8rem;
+    
+    div {
+        margin-bottom: 3.2rem;
+    }
 
-.input-box {
-    margin-top: 0.6rem;
-    background: var(--bg-div);
-    padding: 0.6rem 1.8rem;
-    display: flex;
-    align-items: center; /* Corrigido de 'align-itens' para 'align-items' */
-    border-radius: 0.5rem;
+    strong{
+        color: var(--strong-text);
+    }
 
-    input {
-        border: none;
-        background: transparent;
-        text-align: right;
-        width: 100%;
-        outline: none;
-        font-size: 2.4rem;
-        font-weight: 700;
-        color: var(--input-text);
-
-        &::placeholder {
-            opacity: 0.35;
+    .input-box {
+        margin-top: 0.6rem;
+        background: var(--bg-div);
+        padding: 0.6rem 1.8rem;
+        display: flex;
+        align-items: center; /* Corrigido de 'align-itens' para 'align-items' */
+        border-radius: 0.5rem;
+    
+        input {
+            border: none;
+            background: transparent;
+            text-align: right;
+            width: 100%;
+            outline: none;
+            font-size: 2.4rem;
+            font-weight: 700;
             color: var(--input-text);
+    
+            &::placeholder {
+                opacity: 0.35;
+                color: var(--input-text);
+            }
+        } 
+    }
+
+    .input-box:has(input:focus) {
+        outline: 2px solid var(--topaz);
+    }
+
+    .tip {
+        div{
+            margin-top: 1.6rem;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 1.6rem;
+
+            button{
+               font-size: 2.4rem;
+               color: var(--bg-main);
+               background: var(--input-text);
+               border: none;
+               padding-block: .6rem;
+               font-weight: 700;
+               border-radius: .5rem;
+            }
+
+            input {
+                width: 100%;
+                border: none;
+                background: var(--bg-div);
+                border-radius: .5rem;
+                font-size: 2.4rem;
+                font-weight: 700;
+                text-align: center;
+                color: var(--input-text);
+
+                &::placeholder {
+                    color: var(--beetle-green);
+                }
+
+                &:focus {
+                    outline: 2px solid var(--topaz);
+                }
+            }
         }
     }
 }
