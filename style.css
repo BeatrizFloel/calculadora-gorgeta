@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');* {
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
     margin: 0;
@@ -7,13 +7,16 @@
     font-family: "Space Mono", monospace;
 }
 
-:root{
+:root {
     font-size: 62.5%;
     --bg-body: #C5E4E7;
     --bg-main: #FFF;
+    --strong-text: #5E7A7D;
+    --bg-div: #F3F9FA;
+    --input-text: #00474B;
 }
 
-body{
+body {
     font-size: 1.6rem;
     background: var(--bg-body);
 }
@@ -21,7 +24,6 @@ body{
 header {
     display: flex;
     justify-content: center;
-
     padding-top: 5rem;
     padding-bottom: 4rem;
 }
@@ -29,4 +31,34 @@ header {
 main {
     background: var(--bg-main);
     padding: 3.2rem 2.4rem;
+    border-radius: 2.5rem 2.5rem 0 0;
+}
+
+.info strong {
+    color: var(--strong-text);
+}
+
+.input-box {
+    margin-top: 0.6rem;
+    background: var(--bg-div);
+    padding: 0.6rem 1.8rem;
+    display: flex;
+    align-items: center; /* Corrigido de 'align-itens' para 'align-items' */
+    border-radius: 0.5rem;
+
+    input {
+        border: none;
+        background: transparent;
+        text-align: right;
+        width: 100%;
+        outline: none;
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: var(--input-text);
+
+        &::placeholder {
+            opacity: 0.35;
+            color: var(--input-text);
+        }
+    }
 }
