@@ -16,6 +16,7 @@
     --input-text: #00474B;
     --topaz: #26C2AE;
     --beetle-green: #547878;
+    --regent-grey: #7F9D9F;
 }
 
 body {
@@ -38,7 +39,7 @@ main {
 
 .info {
     margin-inline: .8rem;
-    
+
     div {
         margin-bottom: 3.2rem;
     }
@@ -52,7 +53,7 @@ main {
         background: var(--bg-div);
         padding: 0.6rem 1.8rem;
         display: flex;
-        align-items: center; /* Corrigido de 'align-itens' para 'align-items' */
+        align-items: center;
         border-radius: 0.5rem;
     
         input {
@@ -111,6 +112,47 @@ main {
                     outline: 2px solid var(--topaz);
                 }
             }
+        }
+    }
+}
+
+.results {
+    background: var(--input-text);
+    border-radius: 1.5rem;
+    padding: 4rem 2.4rem 2.4rem;
+
+    .amount,
+    .total{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2.4rem;
+
+        p {
+            color: var(--bg-main);
+            font-weight: 700;
+
+            spam {
+                color: var(--regent-grey);
+                font-size: 1.3rem;
+            }
+
+            strong {
+                font-size: 3.2rem;
+                color: var(--topaz);
+            }
+        }
+
+        button {
+            background: var(--topaz);
+            color: var(--input-text);
+            font-size: 2rem;
+            text-transform: uppercase;
+            width: 100%;
+            border: none;
+            border-radius: .5rem;
+            font-weight: 700;
+            padding-block: .9rem;
         }
     }
 }
