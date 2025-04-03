@@ -31,8 +31,11 @@ body {
 header{
     display: flex;
     justify-content: center;
-    padding-top: 5 rem;
-    padding-bottom: 4 rem;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
     width: 100%;
 }
 
@@ -207,7 +210,7 @@ input::-webkit-outer-spin-button{
                 font-size: 4.8rem;
              }
          }
-         button:hoover{
+         button:hover{
                 background: #9FE8DF;
                 transition: .3s;
                 cursor: pointer;
