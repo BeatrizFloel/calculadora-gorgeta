@@ -1,126 +1,135 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Space Mono", monospace;
 }
 
-:root {
-    font-size: 62.5%;
+:root{
+    font-size: 63.5%;
     --bg-body: #C5E4E7;
     --bg-main: #FFF;
     --strong-text: #5E7A7D;
     --bg-div: #F3F9FA;
     --input-text: #00474B;
-    --topaz: #26C2AE;
+    --topaz: #26c2ae;
     --beetle-green: #547878;
-    --regent-grey: #7F9D9F;
+    --regent-grey: #7f9d9f;
     --water-leaf: #9FE8DF;
 }
-
 body {
     font-size: 1.6rem;
     background: var(--bg-body);
-}
-
-header {
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    padding-top: 5rem;
-    padding-bottom: 4rem;
+    align-items: center;
+    flex-direction: column;
+}
+header{
+    display: flex;
+    justify-content: center;
+    padding-top: 5 rem;
+    padding-bottom: 4 rem;
+    width: 100%;
 }
 
 main {
     background: var(--bg-main);
     padding: 3.2rem 2.4rem;
     border-radius: 2.5rem 2.5rem 0 0;
+    width: 100%;
+    max-width: 50rem;
+    margin: 0 auto;
 }
 
 .info {
-    margin-inline: .8rem;
-
-    div {
-        margin-bottom: 3.2rem;
+         margin-inline: .8rem;
+    div{
+       margin-bottom: 3.2rem;
     }
-
-    strong{
-        color: var(--strong-text);
+    
+    strong {
+        color: #5E7A7D;
     }
-
-    .input-box {
-        margin-top: 0.6rem;
-        background: var(--bg-div);
-        padding: 0.6rem 1.8rem;
+    .input-box{
+        margin-top: .6rem;
+        background: #F3F9FA;
+        padding: .6rem 1.8rem;
         display: flex;
         align-items: center;
-        border-radius: 0.5rem;
-    
-        input {
-            border: none;
-            background: transparent;
-            text-align: right;
+        border-radius: .5rem;
+     
+     
+          input{
+             border: none;
+             background: transparent;
+             text-align: right;
+             width: 100%;
+             outline: none;
+             font-size: 2.4rem;
+             font-weight: 700;
+             color: #00474B;
+     
+             &::placeholder{
+                 color: #00474B;
+                 opacity: 0.35;
+     
+             }
+          }
+     }
+     .input-box:has(input:focus){
+     outline: 2px solid #26c2ae;
+}
+   .tip{
+       div{
+        margin-top: 1.6rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.6rem;
+
+        button{
+         font-size: 2.4rem;
+         color: #FFF;
+         background: #00474B;
+         border: none;
+         padding-block: .6rem;
+         font-weight: 700;
+         border-radius: .5rem;
+        }
+
+        .button-selected{
+            background: #26c2ae;
+        }
+
+        input{
             width: 100%;
-            outline: none;
+            border: none;
+            background: #F3F9FA;
+            border-radius: .5rem;
             font-size: 2.4rem;
             font-weight: 700;
-            color: var(--input-text);
-    
-            &::placeholder {
-                opacity: 0.35;
-                color: var(--input-text);
-            }
-        } 
-    }
+            text-align: center;
+            color: #00474B;
 
-    .input-box:has(input:focus) {
-        outline: 2px solid var(--topaz);
-    }
-
-    .tip {
-        div{
-            margin-top: 1.6rem;
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            gap: 1.6rem;
-
-            button{
-               font-size: 2.4rem;
-               color: var(--bg-main);
-               background: var(--input-text);
-               border: none;
-               padding-block: .6rem;
-               font-weight: 700;
-               border-radius: .5rem;
+            &::placeholder{
+                color: #547878;
             }
 
-            input {
-                width: 100%;
-                border: none;
-                background: var(--bg-div);
-                border-radius: .5rem;
-                font-size: 2.4rem;
-                font-weight: 700;
-                text-align: center;
-                color: var(--input-text);
-
-                &::placeholder {
-                    color: var(--beetle-green);
-                }
-
-                &:focus {
-                    outline: 2px solid var(--topaz);
-                }
+            &:focus{
+                outline: 2px solid #26c2ae;
             }
         }
-    }
+       }
+   }
 }
-
-.results {
-    background: var(--input-text);
+.results{
+    background: #00474B;
     border-radius: 1.5rem;
-    padding: 4rem 2.4rem 2.4rem;
+    padding: 4rem 2rem 2.4rem;
+    
 
     .amount,
     .total{
@@ -128,85 +137,81 @@ main {
         justify-content: space-between;
         align-items: center;
         margin-bottom: 2.4rem;
+    }
 
-        p {
-            color: var(--bg-main);
-            font-weight: 700;
-
-            spam {
-                color: var(--regent-grey);
-                font-size: 1.3rem;
-            }
-
-            strong {
-                font-size: 3.2rem;
-                color: var(--topaz);
-            }
-        }
-
-        button {
-            background: var(--topaz);
-            color: var(--input-text);
-            font-size: 2rem;
-            text-transform: uppercase;
-            width: 100%;
-            border: none;
-            border-radius: .5rem;
-            font-weight: 700;
-            padding-block: .9rem;
-        }
+    p{
+        color: #FFF;
+        font-weight: 700;
+    }
+    span{
+        color: #7f9d9f;
+        font-size: 1.3rem;
+    }
+    strong{
+        font-size: 3.2rem;
+        color: #26c2ae;
+    }
+    button{
+        background: #26c2ae;
+        color: #00474B;
+        font-size: 2rem;
+        text-transform: uppercase;
+        width: 100%;
+        border: none;
+        border-radius: .5rem;
+        font-weight: 700;
+        padding-block: .9rem;
     }
 }
 
-@media(min-width; 920px) {
-    main {
+input::-webkit-inner-spin-button
+input::-webkit-outer-spin-button{
+        display: none;
+    }
+@media(min-width: 920px){
+    main{
         display: flex;
         max-width: 92rem;
-        margin-inline-start: auto;
+        margin-inline: auto;
+        border-radius: 2.5rem;
         gap: 4.8rem;
         padding: 4.8rem;
     }
-
-    section {
+    section{
         width: 100%;
     }
 
-    input::-webkit-inner-spin-button,
-    input::-webkit-outer-spin-button {
-        display: none;
-    }
-
-    .info {
-        .tip {
+    
+     .info{
+        .tip{
             div{
-               grid-template-columns: repeat(3,1fr);
+                grid-template-columns: repeat(3, 1fr);
 
-               input:hover {
-                background: var(--topaz);
-                cursor: pointer;
-                transition: .3s;
-               }
+                button:hover{
+                    background: #9FE8DF;
+                    cursor: pointer;
+                    transition: .3rem;
+                }
             }
         }
-    }
+     }
 
-    .results {
+     .results{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 5.6rem 4rem 4rem;
-
-        .amount,
-        .total {
-            strong {
-            font-size: 4.8rem;
-            }
-        }
-
-        button:hover{
-            background: var(--water-leaf);
-            transition: .3s;
-            cursor: pointer;
-        }
+         amount,
+         total{
+            .strong{
+                font-size: 4.8rem;
+             }
+         }
+         button:hoover{
+                background: #9FE8DF;
+                transition: .3s;
+                cursor: pointer;
+         }
+    
      }
- }
+    }
